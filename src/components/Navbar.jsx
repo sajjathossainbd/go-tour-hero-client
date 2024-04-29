@@ -75,7 +75,7 @@ function Navbar() {
         </div>
         <Link to={"/"} className="flex items-center gap-2">
           <img className="w-12" src={Logo} alt="" />
-          <p className=" text-3xl font-extrabold font-playfair"> LuxLiving</p>
+          <p className=" text-3xl font-extrabold font-playfair"> GoTour Hero</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
