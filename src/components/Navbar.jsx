@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../assets/goTour-hero.png";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 function Navbar() {
+  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <NavLink
@@ -84,51 +87,58 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="flex items-center gap-2">
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Profile Image"
-                  src={
-                    "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  }
-                />
+        {user ? (
+          <div className="flex items-center gap-2">
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    title={
+                      user && user.displayName ? user.displayName : "Unknown"
+                    }
+                    alt="Profile Image"
+                    src={
+                      user.photoURL
+                        ? user.photoURL
+                        : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    }
+                  />
+                </div>
               </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-10"
+              >
+                <h2 className="text-2xl font-bold text-center py-4">
+                  {user && user.displayName ? user.displayName : "Unknown"}
+                </h2>
+                <li>
+                  <Link to={"/update-profile"}>Update Profile</Link>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-10"
+            <button
+              onClick={() => logOut()}
+              className="btn bg-[#e76741] hover:bg-[#FFA488] text-white mr-4 px-5"
             >
-              <h2 className="text-2xl font-bold text-center py-4">
-                {"Unknown"}
-              </h2>
-              <li>
-                <Link to={"/update-profile"}>Update Profile</Link>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-            </ul>
+              Logout
+            </button>
           </div>
-          <button
-            onClick={""}
-            className="btn bg-[#e76741] hover:bg-[#FFA488] text-white mr-4 px-5"
+        ) : (
+          <Link
+            to={"/login"}
+            className="btn bg-[#31C292] hover:bg-[#48a586] text-white mr-4 px-5"
           >
-            Logout
-          </button>
-        </div>
-
-        <Link
-          to={"/login"}
-          className="btn bg-[#31C292] hover:bg-[#1e5aae] text-white mr-4 px-5"
-        >
-          Sing In
-        </Link>
+            Sing In
+          </Link>
+        )}
       </div>
     </div>
   );

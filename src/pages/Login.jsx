@@ -10,14 +10,15 @@ import { AuthContext } from "../provider/AuthProvider";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
-  const { singInUser } = useContext(AuthContext);
+  const { singInUser, singInWithGoogleAuth, singInWithGithubAuth } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleGoogle = () => {
-    console.log("handle google");
+    singInWithGoogleAuth(navigate);
   };
   const handleGithub = () => {
-    console.log("handle github");
+    singInWithGithubAuth(navigate);
   };
 
   const handleSubmit = (event) => {
@@ -78,7 +79,9 @@ function Login() {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary text-xl">Login</button>
+              <button className="btn btn-success text-xl text-white">
+                Login
+              </button>
             </div>
           </form>
         </div>
