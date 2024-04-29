@@ -1,13 +1,17 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../provider/AuthProvider";
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleGoogle = () => {
     console.log("google");
@@ -35,8 +39,7 @@ function Register() {
       return;
     }
 
-    const user = { email, password, name, url };
-    console.log(user);
+    createUser(email, password, name, url, navigate);
   };
   return (
     <>

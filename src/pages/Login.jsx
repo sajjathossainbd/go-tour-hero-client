@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { singInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleGoogle = () => {
     console.log("handle google");
@@ -21,8 +25,8 @@ function Login() {
 
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const user = { email, password };
-    console.log(user);
+
+    singInUser(email, password, navigate);
   };
   return (
     <>

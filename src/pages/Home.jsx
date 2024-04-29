@@ -1,8 +1,14 @@
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <Helmet>
+        <title>GoTour Hero - Home</title>
+      </Helmet>
+      <p>Home</p>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
