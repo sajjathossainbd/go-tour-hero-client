@@ -17,7 +17,18 @@ import auth from "../firebase/firebase.config";
 export const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
+  const [touristsSpotsData, setTouristsSpotsData] = useState([]);
   const [user, setUser] = useState(null);
+
+  // Data Loaded
+  useEffect(() => {
+    const fetchTouristsSpotsData = async () => {
+      const res = await fetch("/touristsData.json");
+      const data = await res.json();
+      setTouristsSpotsData(data);
+    };
+    fetchTouristsSpotsData();
+  }, []);
 
   // Sing In User Google
   const GoogleProvider = new GoogleAuthProvider();
@@ -136,6 +147,7 @@ function AuthProvider({ children }) {
 
   const authInfo = {
     user,
+    touristsSpotsData,
     singInWithGoogleAuth,
     singInWithGithubAuth,
     createUser,

@@ -1,0 +1,134 @@
+[
+  {
+    "image": "https://i.ibb.co/sV6C122/Sundarban-Tiger.png",
+    "tourists_spot_name": "Sundarban",
+    "country_name": "Bangladesh",
+    "location": "Khulna Division",
+    "short_description": "The Sundarbans is a vast forest in the coastal region of the Bay of Bengal, considered one of the natural wonders of the world.",
+    "average_cost": "$500",
+    "seasonality": "Winter",
+    "travel_time": "5 days",
+    "total_visitors_per_year": 100000
+  },
+  {
+    "image": "https://i.ibb.co/bFzf051/bangkok.png",
+    "tourists_spot_name": "Bangkok",
+    "country_name": "Thailand",
+    "location": "Central Thailand",
+    "short_description": "Bangkok is the capital and most populous city of Thailand. It is known for its vibrant street life and cultural landmarks.",
+    "average_cost": "$1000",
+    "seasonality": "Spring",
+    "travel_time": "3 days",
+    "total_visitors_per_year": 2000000
+  },
+  {
+    "image": "https://i.ibb.co/yfyfknn/Bali.png",
+    "tourists_spot_name": "Bali",
+    "country_name": "Indonesia",
+    "location": "Indonesian archipelago",
+    "short_description": "Bali is an Indonesian island known for its forested volcanic mountains, iconic rice paddies, beaches, and coral reefs.",
+    "average_cost": "$800",
+    "seasonality": "Summer",
+    "travel_time": "7 days",
+    "total_visitors_per_year": 1500000
+  },
+  {
+    "image": "https://i.ibb.co/SPHsDcZ/Kuala-Lumpur.png",
+    "tourists_spot_name": "Kuala Lumpur",
+    "country_name": "Malaysia",
+    "location": "Peninsular Malaysia",
+    "short_description": "Kuala Lumpur is the capital of Malaysia, known for its modern skyline including the iconic Petronas Twin Towers.",
+    "average_cost": "$600",
+    "seasonality": "Fall",
+    "travel_time": "4 days",
+    "total_visitors_per_year": 1200000
+  },
+  {
+    "image": "https://i.ibb.co/0QfsbDM/Ha-Long-Bay.png",
+    "tourists_spot_name": "Ha Long Bay",
+    "country_name": "Vietnam",
+    "location": "Quang Ninh Province",
+    "short_description": "Ha Long Bay is a UNESCO World Heritage Site and popular travel destination known for its emerald waters and thousands of towering limestone islands topped with rainforests.",
+    "average_cost": "$700",
+    "seasonality": "Summer",
+    "travel_time": "2 days",
+    "total_visitors_per_year": 800000
+  },
+  {
+    "image": "https://i.ibb.co/4Mxbzg2/Angkor-Wat.png",
+    "tourists_spot_name": "Angkor Wat",
+    "country_name": "Cambodia",
+    "location": "Siem Reap Province",
+    "short_description": "Angkor Wat is a temple complex and the largest religious monument in the world, originally constructed as a Hindu temple dedicated to the god Vishnu for the Khmer Empire.",
+    "average_cost": "$400",
+    "seasonality": "Winter",
+    "travel_time": "3 days",
+    "total_visitors_per_year": 500000
+  },
+  {
+    "image": "https://i.ibb.co/M5mDqW4/Cox-s-Bazar.png",
+    "tourists_spot_name": "Cox’s Bazar",
+    "country_name": "Bangladesh",
+    "location": "Chittagong Division",
+    "short_description": "Cox's Bazar is known for having the longest natural sea beach in the world, an unbroken sandy shore that stretches for about 120 km.",
+    "average_cost": "$300",
+    "seasonality": "Summer",
+    "travel_time": "4 days",
+    "total_visitors_per_year": 700000
+  },
+  {
+    "image": "https://i.ibb.co/Pxm7v5R/Phuket.png",
+    "tourists_spot_name": "Phuket",
+    "country_name": "Thailand",
+    "location": "Southern Thailand",
+    "short_description": "Phuket is a rainforested, mountainous island in the Andaman Sea, has some of Thailand’s most popular beaches, mainly situated along the clear waters of the western shore.",
+    "average_cost": "$900",
+    "seasonality": "Spring",
+    "travel_time": "5 days",
+    "total_visitors_per_year": 1500000
+  },
+  {
+    "image": "https://i.ibb.co/QbTR45q/Borobudur-Temple.png",
+    "tourists_spot_name": "Borobudur Temple",
+    "country_name": "Indonesia",
+    "location": "Central Java",
+    "short_description": "Borobudur is a 9th-century Mahayana Buddhist temple in Magelang, Central Java, Indonesia, and the world's largest Buddhist temple.",
+    "average_cost": "$200",
+    "seasonality": "Fall",
+    "travel_time": "2 days",
+    "total_visitors_per_year": 500000
+  },
+  {
+    "image": "https://i.ibb.co/pJr7v08/Langkawi.png",
+    "tourists_spot_name": "Langkawi",
+    "country_name": "Malaysia",
+    "location": "Langkawi District",
+    "short_description": "Langkawi, officially known as Langkawi, the Jewel of Kedah, is an archipelago of 99 islands in the Andaman Sea, some 30 km off the mainland coast of northwestern Malaysia.",
+    "average_cost": "$400",
+    "seasonality": "Winter",
+    "travel_time": "3 days",
+    "total_visitors_per_year": 900000
+  },
+  {
+    "image": "https://i.ibb.co/VQ8BQrD/Hoi-An-Ancient-Town.png",
+    "tourists_spot_name": "Hoi An Ancient Town",
+    "country_name": "Vietnam",
+    "location": "Quảng Nam Province",
+    "short_description": "Hoi An Ancient Town is a well-preserved example of a Southeast Asian trading port dating from the 15th to the 19th century.",
+    "average_cost": "$300",
+    "seasonality": "Summer",
+    "travel_time": "2 days",
+    "total_visitors_per_year": 600000
+  },
+  {
+    "image": "https://i.ibb.co/ynT0L1S/Siem-Reap.png",
+    "tourists_spot_name": "Siem Reap",
+    "country_name": "Cambodia",
+    "location": "Siem Reap Province",
+    "short_description": "Siem Reap is the capital city of Siem Reap Province in northwestern Cambodia. It is a popular resort town and a gateway to the Angkor region.",
+    "average_cost": "$250",
+    "seasonality": "Winter",
+    "travel_time": "3 days",
+    "total_visitors_per_year": 800000
+  }
+]

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import TouristsSpots from "../components/TouristsSpots";
 
 function Home() {
   return (
@@ -6,7 +7,7 @@ function Home() {
       <Helmet>
         <title>GoTour Hero - Home</title>
       </Helmet>
-      <p>Home</p>
+      <TouristsSpots />
     </div>
   );
 }
