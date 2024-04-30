@@ -38,7 +38,7 @@ function Navbar() {
         Add Tourists Spot
       </NavLink>
       <NavLink
-        to={"/my-tourists-spot-list"}
+        to={`/my-tourists-spot-list/${user?.email}`}
         className={({ isActive }) =>
           isActive
             ? "btn px-6 border-[0.6px] border-[#31C292] hover:border-[#31C292] text-[#31C292] rounded-lg bg-white hover:bg-white"

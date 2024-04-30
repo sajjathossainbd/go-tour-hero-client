@@ -13,7 +13,6 @@ function TouristSpotCard({ touristSpot }) {
     tourists_spot_name,
     country_name,
     location,
-    short_description,
     average_cost,
     seasonality,
     travel_time,

@@ -32,12 +32,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/my-tourists-spot-list",
+        path: "/my-tourists-spot-list/:email",
         element: (
           <PrivateRoute>
             <MyList />
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/tourists-spot/${params.email}`),
       },
       {
         path: "/login",
