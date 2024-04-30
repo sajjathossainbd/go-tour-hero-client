@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import { useState } from "react";
@@ -8,8 +8,7 @@ function MyList() {
 
   const [touristSpots, setTouristSpots] = useState(touristsSpotsData);
 
-  console.log(touristsSpotsData);
-  
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -89,7 +88,11 @@ function MyList() {
                   <td>{touristSpot?.travel_time}</td>
                   <th>
                     <div className="flex gap-4">
-                      <button className="btn btn-accent btn-xs">Update</button>
+                      <Link to={`/update-tourists-spot/${touristSpot._id}`}>
+                        <button className="btn btn-accent btn-xs">
+                          Update
+                        </button>
+                      </Link>
                       <button
                         className="btn btn-error btn-xs"
                         onClick={() => handleDelete(touristSpot._id)}

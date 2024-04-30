@@ -7,6 +7,7 @@ import MyList from "../pages/MyList";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import UpdateTouristsSpot from "../pages/UpdateTouristsSpot";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,16 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/tourists-spot/${params.email}`),
+      },
+      {
+        path: "/update-tourists-spot/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateTouristsSpot />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/tourists-spot-id/${params.id}`),
       },
       {
         path: "/login",
