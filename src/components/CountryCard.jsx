@@ -1,20 +1,30 @@
-function CountryCard() {
-  
+/* eslint-disable react/prop-types */
+import { CiLocationOn } from "react-icons/ci";
+import { Link } from "react-router-dom";
+
+function CountryCard({ touristSpot }) {
+  const { image, country_name, short_description } = touristSpot;
   return (
-    <div>
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <img
-            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
+    <div className="card bg-base-100 shadow-xl">
+      <div className="px-6 pt-6">
+        <figure className="">
+          <img src={image} alt="estate image" className="rounded-lg" />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
+      </div>
+
+      <div className="card-body relative">
+        {/* start */}
+        <div className="location flex gap-2">
+          <CiLocationOn />
+          <p>{country_name}</p>
+        </div>
+        <div className="flex justify-between pb-10">
+          <h2 className="text-xl">{short_description}</h2>
+        </div>
+        <div className="card-actions justify-end absolute bottom-4 right-4 ">
+          <Link to={"`/touristSpot/${id}`"} className="btn btn-outline">
+            View Details
+          </Link>
         </div>
       </div>
     </div>

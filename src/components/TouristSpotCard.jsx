@@ -64,7 +64,7 @@ function TouristSpotCard({ touristSpot }) {
         {/* ending */}
         <div className="card-actions justify-end">
           <Link to={"`/touristSpot/${id}`"} className="btn btn-outline">
-            View Property
+            View Details
           </Link>
         </div>
       </div>
