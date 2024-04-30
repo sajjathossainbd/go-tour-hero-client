@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 function TouristSpotCard({ touristSpot }) {
-  console.log(touristSpot);
   const {
     image,
     tourists_spot_name,
