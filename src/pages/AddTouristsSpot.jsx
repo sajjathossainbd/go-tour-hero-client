@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 function AddTouristsSpot() {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const handleAddSpot = (event) => {
     event.preventDefault();
 
@@ -33,8 +33,34 @@ function AddTouristsSpot() {
       email,
       name,
     };
-    console.log(tourists_spot);
+
+    // send data to the server
+    fetch("http://localhost:5000/tourists-spot", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(tourists_spot),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Tourists Spot Added Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          form.reset(); // Reset the form
+        } else {
+          alert("Failed to add tourists spot"); // Optionally, handle failure
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error); // Optionally, handle error
+      });
   };
+
   return (
     <>
       <Helmet>
@@ -56,6 +82,7 @@ function AddTouristsSpot() {
               name="tourists_spot_name"
               placeholder="Enter Tourist Spot Name"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -65,6 +92,7 @@ function AddTouristsSpot() {
               name="country_name"
               placeholder="Enter Country Name"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -74,6 +102,7 @@ function AddTouristsSpot() {
               name="location"
               placeholder="Enter Location"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -83,6 +112,7 @@ function AddTouristsSpot() {
               name="short_description"
               placeholder="Enter Write A Description"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -92,6 +122,7 @@ function AddTouristsSpot() {
               name="average_cost"
               placeholder="Enter Average Cost"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -101,6 +132,7 @@ function AddTouristsSpot() {
               name="seasonality"
               placeholder="Enter Seasonality"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -110,6 +142,7 @@ function AddTouristsSpot() {
               name="travel_time"
               placeholder="Enter Travel Time"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -121,6 +154,7 @@ function AddTouristsSpot() {
               name="total_visitors_per_year"
               placeholder="Enter Total Visitors Per Year"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full col-span-2">
@@ -130,6 +164,7 @@ function AddTouristsSpot() {
               name="image"
               placeholder="Enter Tourists Spot Photo URL"
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -140,6 +175,7 @@ function AddTouristsSpot() {
               disabled
               value={user.email}
               className="input input-bordered w-full"
+              required
             />
           </label>
           <label className="form-control w-full">
@@ -150,6 +186,7 @@ function AddTouristsSpot() {
               disabled
               value={user.displayName}
               className="input input-bordered w-full"
+              required
             />
           </label>
 
