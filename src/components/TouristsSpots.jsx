@@ -1,10 +1,8 @@
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
 import TouristSpotCard from "./TouristSpotCard";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 function TouristsSpots() {
-  const { touristsSpotsData } = useContext(AuthContext);
+  const touristsSpotsData = useLoaderData();
   return (
     <div>
       <h2 className="text-4xl mb-8 mt-24 font-bold text-center font-playfair">

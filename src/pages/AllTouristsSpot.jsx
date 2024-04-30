@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
 import TouristSpotCard from "../components/TouristSpotCard";
 import { Helmet } from "react-helmet-async";
+import { useLoaderData } from "react-router-dom";
 
 function AllTouristsSpot() {
-  const { touristsSpotsData } = useContext(AuthContext);
+  const touristsSpotsData = useLoaderData();
   return (
     <>
       <Helmet>
