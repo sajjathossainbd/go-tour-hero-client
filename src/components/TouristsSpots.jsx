@@ -7,7 +7,7 @@ function TouristsSpots() {
   const { touristsSpotsData } = useContext(AuthContext);
   return (
     <div>
-      <h2 className="text-4xl mb-8 mt-10 font-bold text-center font-playfair">
+      <h2 className="text-4xl mb-8 mt-24 font-bold text-center font-playfair">
         Tourists Spots
       </h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 mt-10 max-sm:mx-4">
