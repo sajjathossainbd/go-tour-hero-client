@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLoaderData, useParams } from "react-router-dom";
 
 function TouristsSpotDetails() {
   const [touristsDetails, setTouristsDetails] = useState({});
