@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 function TouristSpotCard({ touristSpot }) {
   const {
+    _id,
     image,
     tourists_spot_name,
     country_name,
@@ -62,7 +63,7 @@ function TouristSpotCard({ touristSpot }) {
         </div>
         {/* ending */}
         <div className="card-actions justify-end">
-          <Link to={"`/touristSpot/${id}`"} className="btn btn-outline">
+          <Link to={`/touristSpot/${_id}`} className="btn btn-outline">
             View Details
           </Link>
         </div>
