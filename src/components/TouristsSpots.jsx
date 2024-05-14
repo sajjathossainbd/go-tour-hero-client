@@ -11,7 +11,7 @@ function TouristsSpots() {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 mt-10 max-sm:mx-4">
         {touristsSpotsData.slice(0, 6).map((touristSpot) => (
           <TouristSpotCard
-            key={touristSpot.tourists_spot_name}
+            key={touristSpot._id}
             touristSpot={touristSpot}
           />
         ))}

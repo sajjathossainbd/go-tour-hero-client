@@ -63,7 +63,7 @@ function TouristSpotCard({ touristSpot }) {
         </div>
         {/* ending */}
         <div className="card-actions justify-end">
-          <Link to={`/touristSpot/${_id}`} className="btn btn-outline">
+          <Link to={`/tourists-spot-details/${_id}`} className="btn btn-outline">
             View Details
           </Link>
         </div>

@@ -50,7 +50,7 @@ function UpdateTouristsSpot() {
     };
 
     // send data to the server
-    fetch(`http://localhost:5000/tourists-spot-id/${_id}`, {
+    fetch(`https://go-tour-hero-server.vercel.app/tourists-spot-id/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

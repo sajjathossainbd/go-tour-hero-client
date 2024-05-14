@@ -8,21 +8,26 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import UpdateTouristsSpot from "../pages/UpdateTouristsSpot";
+import TouristsSpotDetails from "../pages/TouristsSpotDetails";
+import PageNotFound from "../pages/PageNotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <PageNotFound />,
     children: [
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/tourists-spot"),
+        loader: () =>
+          fetch("https://go-tour-hero-server.vercel.app/tourists-spot"),
       },
       {
         path: "/all-tourists-spot",
         element: <AllTouristsSpot />,
-        loader: () => fetch("http://localhost:5000/tourists-spot"),
+        loader: () =>
+          fetch("https://go-tour-hero-server.vercel.app/tourists-spot"),
       },
       {
         path: "/add-tourists-spot",
@@ -40,7 +45,21 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tourists-spot/${params.email}`),
+          fetch(
+            `https://go-tour-hero-server.vercel.app/tourists-spot/${params.email}`
+          ),
+      },
+      {
+        path: "/tourists-spot-details/:id",
+        element: (
+          <PrivateRoute>
+            <TouristsSpotDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://go-tour-hero-server.vercel.app/tourists-spot-id/${params.id}`
+          ),
       },
       {
         path: "/update-tourists-spot/:id",
@@ -50,7 +69,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tourists-spot-id/${params.id}`),
+          fetch(
+            `https://go-tour-hero-server.vercel.app/tourists-spot-id/${params.id}`
+          ),
       },
       {
         path: "/login",
